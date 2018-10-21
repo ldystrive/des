@@ -77,5 +77,4 @@ namespace DES {
 }
 
 
-
 #endif // __DES_H__

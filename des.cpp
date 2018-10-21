@@ -1,13 +1,13 @@
 #include "des.h"
 
 
-#define DEGUB
+// #define _DEGUB_
 
 using namespace std;
 
 namespace DES {
 
-	const int iteration_times = 16;
+	const int iteration_times = 8;
 
 	const unsigned short IP[] = { 57, 49, 41, 33, 25, 17, 9, 1, 59, 51, 43, 35, 27, 19, 11, 3,  \
 								61, 53, 45, 37, 29, 21, 13, 5, 63, 55, 47, 39, 31, 23, 15, 7, \
@@ -170,13 +170,13 @@ namespace DES {
 	unsigned long long decode(const unsigned long long &S, const unsigned long long &K) { return coder(S, K, 0); }
 }
 
-#ifdef DEGUB
+#ifdef _DEGUB_
 int main()
 {
 	unsigned long long K = (unsigned long long)0x133457799BBCDFF1;
 	unsigned long long M = (unsigned long long)0x0123456789ABCDEF;
 	unsigned long long S = (unsigned long long)0x85E813540F0AB405;
-	DES::Key key(K);
+	// DES::Key key(K);
 	cout << hex << DES::encode(M, K) << endl;
 	cout << hex << DES::decode(S, K) << endl;
 	system("pause");
